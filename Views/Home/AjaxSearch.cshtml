@@ -1,0 +1,36 @@
+﻿@model List<MegaMobile.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @foreach (var x in Model)
+    {
+        <div class="col-sm-6 col-xs-6 col-md-3">
+            <div class="thumbnail">
+                <img src="@x.Image" alt="" />
+                <h4 style="text-align:center">
+                    @x.pId
+                    <br />
+                    @x.Model
+                </h4>
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">Rs. @x.Price</span></p>
+                    </div>
+                    <div class="add-cart">
+                        @if (@Session["user"] != null)
+                        {
+                            <h4><a href="/Cart/AddToCart?mod=@x.Model">Add to Cart</a></h4>
+
+                        }
+                        else
+                        {
+                            <h4><a href="/Account/Login">Add to Cart</a></h4>
+                        }
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
