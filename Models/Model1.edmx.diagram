@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b073824b8fc1426299e13fd7c4b65825" Name="Diagram1">
+        <EntityTypeShape EntityType="MegaMobileModel.Admin" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Cart" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Category" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Customer" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Order" Width="1.5" PointX="3.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Product" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegaMobileModel.Specification" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="MegaMobileModel.FK_Cart_ToCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="MegaMobileModel.FK_Cart_ToProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="MegaMobileModel.FK_Product_ToCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="MegaMobileModel.FK_Order_ToCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="MegaMobileModel.FK_Order_ToProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="MegaMobileModel.FK_Specification_ToProduct" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

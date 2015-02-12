@@ -1,0 +1,16 @@
+﻿
+@if (@Session["user"] != null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="~/Login/Logout" class="active"><i class="fa fa-lock"></i> Logout</a></li>
+
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="~/Login/Login" class="active"><i class="fa fa-lock"></i> Login</a></li>
+        <li><a href="~/Login/Register" class="active"><i class="fa fa-lock"></i> Register</a></li>
+       
+    </ul>
+}

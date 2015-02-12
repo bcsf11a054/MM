@@ -1,0 +1,192 @@
+﻿@model List<MegaMobile.Models.Product>
+@{
+    ViewBag.Title = "Mega Mobile";
+}
+
+
+  
+
+    <section id="slider">
+        <!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider-carousel" data-slide-to="1"></li>
+                            <li data-target="#slider-carousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-sm-6">
+                                    <h1><span>Mega </span>Mobiles</h1>
+                                    <h2>Largest Online Mobile Shopping Site</h2>
+                                    <p>Easy To Buy Mobiles No Nees to Go to Malls  </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="" class="girl img-responsive" alt="" />
+                                    <img src="images/q.jpg" class="pricing" alt="" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-sm-6">
+                                    <h1><span>Mega </span>Mobiles</h1>
+                                    <h2>Largest Online Mobile Shopping Site</h2>
+                                    <p>Easy To Buy Mobiles No Nees to Go to Malls  </p> 
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="" class="girl img-responsive" alt="" />
+                                    <img src="images/i6.png" class="pricing" alt="" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/slider-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>Category</h2>
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            New Laptops
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="sportswear" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a href="#">Dell </a></li>
+                                            <li><a href="#">Acer </a></li>
+                                            <li><a href="#">Hp </a></li>
+                                            <li><a href="#">Apple</a></li>
+                                            <li><a href="#">Asus </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            Accesories
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="mens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a href="#">Chargers </a></li>
+                                            <li><a href="#">Hard Disk </a></li>
+                                            <li><a href="#">Ram </a></li>
+                                            <li><a href="#">LCD/LED</a></li>
+                                            <li><a href="#">Camera </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                        </div><!--/category-products-->
+
+                        <div class="brands_products">
+                            <!--brands_products-->
+                            <h2>Brands</h2>
+                            <div class="brands-name">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#"> <span class="pull-right">(20)</span>Apple</a></li>
+                                    <li><a href="#"> <span class="pull-right">(56)</span>Dell</a></li>
+                                    <li><a href="#"> <span class="pull-right">(27)</span>Asus</a></li>
+                                    <li><a href="#"> <span class="pull-right">(32)</span>Acer</a></li>
+                                    <li><a href="#"> <span class="pull-right">(29)</span>Hp</a></li>
+                                </ul>
+                            </div>
+                        </div><!--/brands_products-->
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
+                            <div class="row">
+                                @foreach (var x in Model)
+                                {
+                                    <div class="col-sm-6 col-xs-6 col-md-3">
+                                        <div class="thumbnail">
+                                            <a href="/Brand/Specifications?mod=@x.Model">
+                                                <img src="@x.Image" alt="" />
+                                            </a>
+
+                                            <h4 style="text-align:center">
+                                                @x.pId
+                                                <br />
+                                                @x.Model
+                                            </h4>
+                                            <div class="price-details">
+                                                <div class="price-number">
+                                                    <p><span class="rupees">Rs. @x.Price</span></p>
+                                                </div>
+                                                <div class="add-cart">
+                                                    @if (@Session["user"] != null)
+                                                    {
+                                                        <h4><a href="/Cart/AddToCart?mod=@x.Model">Add to Cart</a></h4>
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <h4><a href="/Account/Login">Add to Cart</a></h4>
+                                                    }
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div><!--features_items-->
+
+                   
+
+                   
+                    </div><!--/category-tab-->
+
+                   
+
+                </div>
+            </div>
+    </section>
+
+    
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
